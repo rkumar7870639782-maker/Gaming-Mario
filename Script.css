@@ -1,0 +1,527 @@
+/* =========================================
+   SUPER DEV PORTFOLIO WORLD - FINAL CSS
+   Fully Responsive for Mobile + Desktop
+   ========================================= */
+
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== BODY ===== */
+body {
+    overflow-x: auto;
+    overflow-y: hidden;
+    font-family: 'Press Start 2P', cursive;
+    background: #5c94fc;
+    touch-action: manipulation;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* ===== MAIN GAME WORLD ===== */
+#world {
+    position: relative;
+    width: 8500px;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(
+        to bottom,
+        #5c94fc 0%,
+        #87ceeb 60%,
+        #3cb043 60%,
+        #3cb043 100%
+    );
+}
+
+/* ===== SUN ===== */
+.sun {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    background: yellow;
+    border-radius: 50%;
+    top: 50px;
+    right: 300px;
+    box-shadow: 0 0 100px yellow;
+    animation: sunPulse 3s infinite alternate;
+}
+
+@keyframes sunPulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+}
+
+/* ===== CLOUDS ===== */
+.cloud {
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    background: white;
+    border-radius: 100px;
+    opacity: 0.95;
+}
+
+.cloud::before,
+.cloud::after {
+    content: '';
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+}
+
+.cloud::before {
+    width: 90px;
+    height: 90px;
+    top: -30px;
+    left: 20px;
+}
+
+.cloud::after {
+    width: 110px;
+    height: 110px;
+    top: -45px;
+    right: 20px;
+}
+
+.cloud1 {
+    top: 100px;
+    left: 200px;
+    animation: floatCloud 25s linear infinite;
+}
+
+.cloud2 {
+    top: 180px;
+    left: 1600px;
+    animation: floatCloud 35s linear infinite;
+}
+
+.cloud3 {
+    top: 80px;
+    left: 3500px;
+    animation: floatCloud 30s linear infinite;
+}
+
+@keyframes floatCloud {
+    from { transform: translateX(0); }
+    to { transform: translateX(-800px); }
+}
+
+/* ===== GROUND ===== */
+.ground {
+    position: absolute;
+    bottom: 0;
+    width: 8500px;
+    height: 120px;
+    background: repeating-linear-gradient(
+        90deg,
+        #8b4513 0px,
+        #8b4513 60px,
+        #7a3d00 60px,
+        #7a3d00 120px
+    );
+    border-top: 8px solid #5a2d0c;
+}
+
+/* ===== PLAYER ===== */
+#player {
+    position: absolute;
+    width: 70px;
+    height: 100px;
+    left: 100px;
+    bottom: 120px;
+    z-index: 100;
+    transition: transform 0.1s;
+}
+
+.cap {
+    position: absolute;
+    width: 70px;
+    height: 20px;
+    background: red;
+    border: 4px solid black;
+}
+
+.face {
+    position: absolute;
+    width: 50px;
+    height: 40px;
+    background: peachpuff;
+    border: 4px solid black;
+    top: 18px;
+    left: 10px;
+}
+
+.body {
+    position: absolute;
+    width: 55px;
+    height: 35px;
+    background: red;
+    border: 4px solid black;
+    top: 55px;
+    left: 7px;
+}
+
+.legs {
+    position: absolute;
+    width: 55px;
+    height: 25px;
+    background: blue;
+    border: 4px solid black;
+    top: 85px;
+    left: 7px;
+}
+
+.walk .legs {
+    animation: walk 0.2s infinite alternate;
+}
+
+@keyframes walk {
+    from { transform: translateX(-3px); }
+    to { transform: translateX(3px); }
+}
+
+/* ===== PANELS ===== */
+.panel {
+    position: absolute;
+    width: 550px;
+    background: white;
+    border: 8px solid black;
+    padding: 40px;
+    box-shadow: 15px 15px #000;
+    transition: 0.4s;
+}
+
+.panel:hover {
+    transform: translateY(-10px) scale(1.03);
+}
+
+.panel h2 {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.panel p {
+    font-size: 11px;
+    line-height: 2;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.skill {
+    background: yellow;
+    padding: 15px;
+    border: 4px solid black;
+}
+
+.project {
+    margin-top: 20px;
+    padding: 20px;
+    background: #333;
+    color: white;
+    border: 4px solid black;
+}
+
+/* ===== COINS ===== */
+.coin {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: gold;
+    border: 5px solid orange;
+    animation: coinSpin 0.5s infinite alternate;
+}
+
+@keyframes coinSpin {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(180deg); }
+}
+
+/* ===== ENEMIES ===== */
+.enemy {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: brown;
+    border-radius: 50%;
+    border: 5px solid black;
+    animation: enemyMove 1s infinite alternate;
+}
+
+@keyframes enemyMove {
+    from { transform: translateX(-40px); }
+    to { transform: translateX(40px); }
+}
+
+/* ===== FLAG ===== */
+#flag {
+    position: absolute;
+    right: 300px;
+    bottom: 120px;
+    width: 15px;
+    height: 350px;
+    background: white;
+    z-index: 50;
+}
+
+.flag-top {
+    position: absolute;
+    width: 120px;
+    height: 80px;
+    background: red;
+    left: 15px;
+    top: 0;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+    animation: flagWave 1s infinite alternate;
+}
+
+@keyframes flagWave {
+    from { transform: skewY(0deg); }
+    to { transform: skewY(5deg); }
+}
+
+/* ===== UI ===== */
+#ui {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 9999;
+    color: white;
+    text-shadow: 4px 4px black;
+    line-height: 2;
+    font-size: 14px;
+}
+
+#coins,
+#world-label {
+    display: block;
+}
+
+/* ===== START SCREEN ===== */
+#start {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 10000;
+    text-align: center;
+    padding: 20px;
+}
+
+#start h1 {
+    font-size: 50px;
+    line-height: 1.8;
+    animation: titleGlow 1s infinite alternate;
+}
+
+#start p {
+    font-size: 14px;
+    line-height: 2;
+}
+
+@keyframes titleGlow {
+    from { text-shadow: 0 0 10px yellow; }
+    to { text-shadow: 0 0 30px orange; }
+}
+
+#start button {
+    margin-top: 40px;
+    padding: 25px 40px;
+    border: 6px solid black;
+    background: yellow;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+/* ===== POPUP ===== */
+#contactPopup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
+
+.popup-box {
+    width: 90%;
+    max-width: 700px;
+    background: white;
+    border: 10px solid black;
+    padding: 40px;
+    box-shadow: 15px 15px #000;
+    text-align: center;
+}
+
+.popup-box h1 {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.popup-box p {
+    font-size: 10px;
+    line-height: 2;
+    margin-bottom: 30px;
+}
+
+.popup-box input,
+.popup-box textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 5px solid black;
+    font-family: inherit;
+    font-size: 10px;
+}
+
+.popup-box textarea {
+    height: 150px;
+    resize: none;
+}
+
+.popup-box button {
+    padding: 20px 30px;
+    background: yellow;
+    border: 5px solid black;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 10px;
+}
+
+/* ===== PARTICLES ===== */
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: yellow;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: particle 1s forwards;
+}
+
+@keyframes particle {
+    to {
+        transform: translateY(-100px) scale(0);
+        opacity: 0;
+    }
+}
+
+/* =========================================
+   MOBILE CONTROL BUTTONS
+   ========================================= */
+#mobileControls {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 100000;
+    pointer-events: none;
+}
+
+#mobileControls button {
+    pointer-events: auto;
+    width: 70px;
+    height: 70px;
+    border: 4px solid black;
+    border-radius: 50%;
+    background: yellow;
+    font-size: 28px;
+    font-family: inherit;
+    box-shadow: 4px 4px #000;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+#jumpBtn {
+    margin: 0 auto;
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+   ========================================= */
+@media (max-width: 767px) {
+    #start h1 {
+        font-size: 24px;
+        line-height: 1.6;
+    }
+
+    #start p {
+        font-size: 10px;
+        line-height: 1.8;
+    }
+
+    #start button {
+        padding: 15px 20px;
+        font-size: 10px;
+    }
+
+    .panel {
+        width: 300px;
+        padding: 20px;
+    }
+
+    .panel h2 {
+        font-size: 12px;
+        margin-bottom: 15px;
+    }
+
+    .panel p,
+    .project,
+    .skill {
+        font-size: 8px;
+        line-height: 1.8;
+    }
+
+    #ui {
+        top: 10px;
+        left: 10px;
+        font-size: 10px;
+    }
+
+    #mobileControls button {
+        width: 60px;
+        height: 60px;
+        font-size: 22px;
+    }
+
+    .popup-box {
+        padding: 20px;
+    }
+
+    .popup-box h1 {
+        font-size: 14px;
+    }
+
+    .popup-box p,
+    .popup-box input,
+    .popup-box textarea,
+    .popup-box button {
+        font-size: 8px;
+    }
+}
+
+/* Hide mobile controls on desktop */
+@media (min-width: 768px) {
+    #mobileControls {
+        display: none;
+    }
+}
