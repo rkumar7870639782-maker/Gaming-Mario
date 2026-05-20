@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Super Dev Portfolio World</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<!-- TASK 1: Add The START SCREEN-->
+
+<body>
+
+    <!-- ===== SECTION 1: START SCREEN ===== -->
+    <!-- HINT: Opening section tag -->
+    <section id="start">
+
+        <!-- HINT: Main heading (largest text) -->
+        <h1>SUPER DEV WORLD</h1>
+
+        <!-- HINT: Paragraph for instructions -->
+        <p>
+            PLAY MY INTERACTIVE PORTFOLIO GAME<br><br>
+            COLLECT ALL COINS 🪙<br>
+            AVOID ENEMIES 👾<br><br>
+            MOVE → ←<br>
+            JUMP SPACE
+        </p>
+
+        <!-- HINT: Button to start game -->
+        <button onclick="startGame()" class="btn-start">
+            START GAME
+        </button>
+
+    </section>
+
+<!-- TASK 2: Add The GAME WORLD -->
+
+<!-- ===== SECTION 2: GAME WORLD ===== -->
+<section id="world" class="game-world">
+
+    <!-- Sky Element -->
+    <div class="sun"></div>
+
+    <!-- Clouds (you'll add 3) -->
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+
+    <!-- Ground -->
+    <div class="ground"></div>
+
+    <!-- PLAYER CHARACTER - Fill the gaps -->
+    <div id="player" class="player">
+        <div class="cap"></div>
+        <div class="face"></div>
+        <div class="body"></div>
+        <div class="legs"></div>
+    </div>
+
+</section>
+
+<!-- TASK 3: Add INFO PANELS -->
+
+<!-- ===== ABOUT ME PANEL ===== -->
+<div class="panel" style="left:700px; bottom:180px;">
+    <h2>ABOUT ME</h2>
+    <p>
+        CREATIVE FRONTEND DEVELOPER<br><br>
+        I BUILD 3D WEBSITES,<br>
+        GAME UI,<br>
+        INTERACTIVE EXPERIENCES
+    </p>
+</div>
+
+<!-- ===== SKILLS PANEL ===== -->
+<div class="panel" style="left:2300px; bottom:180px;">
+    <h2>SKILLS</h2>
+    <div class="skills">
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JAVASCRIPT</div>
+        <div class="skill">REACT</div>
+    </div>
+</div>
+
+<!-- ===== PROJECTS PANEL ===== -->
+<div class="panel" style="left:4700px; bottom:180px;">
+    <h2>PROJECTS</h2>
+    <div class="project">3D GAME WEBSITE</div>
+    <div class="project">CYBERPUNK UI</div>
+    <div class="project">INTERACTIVE DASHBOARD</div>
+</div>
+
+<!-- ===== CONTACT PANEL ===== -->
+<div class="panel" style="left:7000px; bottom:180px;">
+    <h2>CONTACT</h2>
+    <p>
+        EMAIL: hello@developer.com<br><br>
+        GITHUB: github.com/dev<br><br>
+        INSTAGRAM: @developer
+    </p>
+</div>
+
+<!-- TASK 4: Add GAME OBJECTS -->
+<!-- ===== COINS TO COLLECT ===== -->
+<div class="coin" style="left:1550px; bottom:420px;"></div>
+<div class="coin" style="left:3450px; bottom:470px;"></div>
+<div class="coin" style="left:5650px; bottom:430px;"></div>
+<div class="coin" style="left:6400px; bottom:250px;"></div>
+<div class="coin" style="left:7800px; bottom:260px;"></div>
+
+<!-- ===== ENEMIES TO AVOID ===== -->
+<div class="enemy" style="left:1900px; bottom:120px;"></div>
+<div class="enemy" style="left:4200px; bottom:120px;"></div>
+<div class="enemy" style="left:6000px; bottom:120px;"></div>
+<div class="enemy" style="left:7600px; bottom:120px;"></div>
+
+<!-- TASK 5: Add UI CONTAINER -->
+
+<!-- ===== FLOATING UI STATS ===== -->
+<div id="ui" class="ui-container">
+    <span id="coins">COINS: 0</span>
+    <span id="world-label">WORLD: DEV-1</span>
+</div>
+
+<!-- ===== CONTACT POPUP (Hidden) ===== -->
+<div id="contactPopup" class="popup-overlay">
+    <div class="popup-box">
+        <h1>🚀 MISSION COMPLETE</h1>
+        <p>YOU COMPLETED THE PORTFOLIO WORLD.<br><br>SEND YOUR QUERY OR PROJECT REQUEST.</p>
+        <form id="contactForm">
+            <input type="text" placeholder="YOUR NAME" required>
+            <input type="email" placeholder="YOUR EMAIL" required>
+            <textarea placeholder="YOUR MESSAGE" required></textarea>
+            <button type="submit" class="btn-submit">SEND MESSAGE</button>
+        </form>
+        <button onclick="closePopup()" class="btn-close">✕</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
